@@ -1,0 +1,34 @@
+{
+  "tests": [
+    {
+      "name": "Test",
+      "setup": "",
+      "run": "gradle test",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 0
+    },
+    {
+      "name": "Checkstyle Test",
+      "setup": "",
+      "run": "gradle checkstyleMain",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 0
+    },
+    {
+      "name": "PMD Test",
+      "setup": "",
+      "run": "gradle pmdMain",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 0
+    }
+  ]
+}
