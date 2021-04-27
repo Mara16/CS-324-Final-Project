@@ -1,3 +1,6 @@
+/*
+* GitHub Repo: https://github.com/Mara16/CS-324-Final-Project
+*/
 
 import java.util.Arrays;
 
@@ -7,10 +10,6 @@ public class BWT {
 
     public BWT(String word) {
         this.text = word;
-    }
-
-    public String getWord() {
-        return this.text;
     }
 
     public String getTransform() {
@@ -69,12 +68,5 @@ public class BWT {
         // System.out.println(Arrays.toString(d));   // the original sorted rotations table reconstructed
         System.out.println("Original string: " + d[this.index]);
         return d[this.index];
-    }
-
-    public static void main(String[] args) {
-        String text = "banana";
-        System.out.println("Original text: " + text + "\n");
-        BWT a = new BWT(text);
-        a.permutations();
     }
 }
