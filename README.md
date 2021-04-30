@@ -7,19 +7,26 @@
 > where repeated characters in that string are grouped together. 
 > The transformed string is more amenable to compression with the application of other compression algorithms like Huffman or arithmetic coding . 
 
-**1.** `Demo.java` contains a main method to exhibit how your code can be run.
+**1.** `Demo.java` contains a main method to exhibit how the code can be run.
 
 
-**2.** The `BWT.Java` uses three instance variables and constructor to set the original text. It is also composed of the three following methods:
+**2.** `BWT.Java` uses three instance variables and a constructor to set the original text. It is also composed of the three following methods:
 
 - **permutations()** creates the permutations of the text calls encode() by sending it a 1D String array 'rotations' holding the permutations. 
 
-- **encode(String[] rotations)** receives the 'rotations' array and concatenates the last column, as well as the index of the row at which the original text sits in the 1D array. The methods then calls decode. 
+- **encode(String[] rotations)** receives the 'rotations' array and concatenates the last column, as well as the index of the row at which the original text sits in the 1D array. The method then calls decode. 
      
 - **decode()** reverses the encoded text back to its original form. 
 
 **3.** `Test.java` ensures that the algorithm is encoding and decoding correctly. It uses a combination of one-word text and sentences. 
 
 
+Input tested:
 
+- Single word 
+- Single character 
+- One sentence
+- More than one sentence
+- Null 
+- Empty string 
 

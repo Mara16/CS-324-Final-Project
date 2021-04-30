@@ -60,4 +60,31 @@ public class Testing {
                 a.getTransform());
         assertEquals(s, a.decode());
     }
+
+    @Test
+    void testSingleChar()  {
+        String s = "a";
+        s = s.replace(" ", "a");
+        BWT a = new BWT(s);
+        a.permutations();
+        assertEquals("a",
+                a.getTransform());
+        assertEquals(s, a.decode());
+    }
+
+    @Test
+    void testInvalidLength()  {
+        String s = "";
+        BWT a = new BWT(s);
+        assertEquals("invalid length",
+                a.getTransform());
+    }
+
+    @Test
+    void testNull()  {
+        String s = "";
+        BWT a = new BWT(s);
+        assertEquals("invalid length",
+                a.getTransform());
+    }
 }
