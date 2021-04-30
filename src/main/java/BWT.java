@@ -5,11 +5,16 @@
 import java.util.Arrays;
 
 public class BWT {
+
     private String text, transform;
     private int index;
 
     public BWT(String word) {
-        this.text = word;
+        if (word.length() > 0 && word != null)
+            this.text = word;
+        else {
+            this.transform = "invalid length";
+        }
     }
 
     public String getTransform() {
@@ -23,29 +28,29 @@ public class BWT {
         // create rotations and store in rotations array
         for (int i = 0; i < rotations.length; i++) {
             rotations[i] = this.text.substring(i) + this.text.substring(0, i);
-            System.out.println("rotation " + i + ": " + rotations[i]);
+            // System.out.println("rotation " + i + ": " + rotations[i]);
         }
 
         encode(rotations);
     }
 
     private void encode(String[] rotations) {
-        //sort the rotations lexicographically
+        // sort the rotations lexicographically
         Arrays.sort(rotations);
 
-        System.out.println("\nSorted rotations: ");
+        // System.out.println("\nSorted rotations: ");
 
         // getting the last column, 'the transformed text'
         String transform = "";
         for (int i = 0; i < rotations.length; i++) {
-            System.out.println(rotations[i]);
+            // System.out.println(rotations[i]);
             transform += rotations[i].charAt(rotations.length - 1);
             if (rotations[i].equals(this.text))    // index of where the original text sits needed to decode later
                 this.index = i;
         }
 
         // System.out.println("The original text sits at index: " + this.index);
-        System.out.println("\nBurrows-Wheeler Transform: " + transform);
+        // System.out.println("\nBurrows-Wheeler Transform: " + transform);
         this.transform = transform;
 
         decode();
@@ -66,7 +71,7 @@ public class BWT {
         }
 
         // System.out.println(Arrays.toString(d));   // the original sorted rotations table reconstructed
-        System.out.println("Original string: " + d[this.index]);
+        // System.out.println("Original string: " + d[this.index]);
         return d[this.index];
     }
 }
